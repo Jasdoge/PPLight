@@ -52,7 +52,7 @@ If you want to reprogram your light you'll need the following:
 - The rest don't matter. Don't burn bootloader unless you know what you're doing.
 7. You should now be able to upload your code.
 
-
+**Note: If you're struggling with these instructions, let me know and I'll make a youtube video**
 
 
 
