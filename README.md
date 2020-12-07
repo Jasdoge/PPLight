@@ -32,13 +32,13 @@ If you want to reprogram your light you'll need the following:
 
 - An arduino (pref arduino UNO)
 - A breadboard
-- A 10uF capacitor
+- A 10uF electrolytic capacitor
 - A 4.7 kOhm resistor.
-- 8-pin ICP clips.
+- 8-pin SOIC test clips. https://www.aliexpress.com/item/33058340727.html
 
 1. Install the MegaTinyCore library in arduino. (If you haven't installed Arduino, do so at https://www.arduino.cc/
 2. Then follow the instructions here: https://github.com/SpenceKonde/megaTinyCore/blob/master/MakeUPDIProgrammer.md But **do not connect the power pin to the PPLight**. In the tutorial they use a 470 ohm resistor on the UPDI wire, you can use a 4.7k instead, it doesn't matter that much.
-3. Connect pin 6 of your arduino to your breadboard, then to pin 6 of the clips (second from the bottom right, the red wire on the ICP clips is top left).
+3. Connect pin 6 of your arduino to your breadboard, then to pin 6 of the clips (second from the bottom right, the red wire on the clips is top left).
 4. Connect ground to the top right of your test clips.
 5. Connect the clips to the attiny on the board. The chamfered edge is left. Align it so the red cable on the clips is top left.
 6. Use the following arduino settings:
