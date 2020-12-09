@@ -224,15 +224,17 @@ void loop(){
 
 		last_frame = ms;
 
-		uint16_t brightness = ms%512;	// 2 blinks per second
-		if( brightness >= 255 )
-			brightness = 255-(brightness-255);
+		uint16_t brightness = ms%500;	// 2 blinks per second
+		if( brightness >= 250 )
+			brightness = 250-(brightness-250);
+
+		brightness = map(brightness, 0, 250, 0, MAX_BRIGHTNESS);
 
 		// Time to fade
 		if( ms-wake > KEEPALIVE_DURATION ){
 
 			uint16_t fade = ms-wake-KEEPALIVE_DURATION;	// how far between 0 and FADE_TIME are we in MS?
-			fade = map(fade, 0, FADE_TIME, 0, 255);
+			fade = map(fade, 0, FADE_TIME, 0, MAX_BRIGHTNESS);
 			if( fade > brightness )
 				brightness = 0;
 			else
