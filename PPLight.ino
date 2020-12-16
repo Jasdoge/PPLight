@@ -93,7 +93,14 @@ void checkCharging( bool force ){
 	
 	last_charge_check = ms;
 
+	const bool pre = charging;
 	charging = !digitalRead(PIN_CHARGE_DET);
+
+	// Turn on after charging finishes
+	if( !charging && pre )
+		toggle(true);
+	
+	
 
 	#endif
 
@@ -161,7 +168,7 @@ void setup(){
 	}
 	
 	
-	toggle();
+	toggle(digitalRead(PIN_INTERRUPT));
 
 
 
